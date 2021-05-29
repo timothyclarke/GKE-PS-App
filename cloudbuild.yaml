@@ -5,6 +5,6 @@ steps:
 
 - id: install-app
   name: 'dtzar/helm-kubectl:3.5.0'
-  args: ['upgrade', 'parser', 'parser', '--install']
+  args: ['helm', 'upgrade', 'parser', 'parser', '--install', '--debug']
   env:
    - 'KUBECONFIG=/workspace/.kube/config'
