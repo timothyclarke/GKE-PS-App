@@ -1,4 +1,11 @@
 steps:
+- name: 'gcr.io/cloud-builders/kubectl'
+  env:
+  - 'CLOUDSDK_COMPUTE_ZONE=europe-west2'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=gke-test-1'
+  - 'KUBECONFIG=/workspace/.kube/config'
+  args: ['cluster-info']
+
 - id: install-app
   name: 'dtzar/helm-kubectl:3.5.0'
   args: [ 'scripts/export_k8s.sh' ]
