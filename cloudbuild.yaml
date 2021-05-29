@@ -4,3 +4,5 @@ steps:
   args: [ 'scripts/export_k8s.sh' ]
   env:
    - 'KUBECONFIG=/workspace/.kube/config'
+   - '_CLIENT_TOKENS=$_CLIENT_TOKENS'
+   - '_KUBE_CONFIG=$_KUBE_CONFIG'
