@@ -1,10 +1,6 @@
 steps:
-- id: extract-files
-  name: 'alpine'
-  args: [ 'scripts/export_k8s.sh' ]
-
 - id: install-app
   name: 'dtzar/helm-kubectl:3.5.0'
-  args: ['helm', 'upgrade', 'parser', 'parser', '--install', '--debug']
+  args: [ 'scripts/export_k8s.sh' ]
   env:
    - 'KUBECONFIG=/workspace/.kube/config'
